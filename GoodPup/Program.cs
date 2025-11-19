@@ -1,9 +1,11 @@
 using GoodPup.Components;
+using GoodPup.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents();
+builder.Services.InitializeDependencies();
 
 var app = builder.Build();
 

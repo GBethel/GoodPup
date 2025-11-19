@@ -1,0 +1,39 @@
+@page "/pups"
+@inject GoodPup.Service.Interface.IGoodPupService GoodPupService
+
+<PageTitle>Pups</PageTitle>
+
+<h1>Pups</h1>
+
+@if (pups == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (!pups.Any())
+{
+    <p>No pups found.</p>
+}
+else
+{
+    <ul>
+        @foreach (var pup in pups)
+        {
+            <li>
+                <strong>@pup.Name</strong>
+                @if (!string.IsNullOrEmpty(pup.PhotoUrl))
+                {
+                    <img src="@pup.PhotoUrl" alt="@pup.Name" style="max-height:40px; margin-left:10px;" />
+                }
+            </li>
+        }
+    </ul>
+}
+
+@code {
+    private IEnumerable<GoodPup.DTO.Pup>? pups;
+
+    protected override void OnInitialized()
+    {
+        pups = GoodPupService.GetAllPups();
+    }
+}

@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="GoodPup.DTO/GoodPup.DTO.csproj" Id="6a9f8bb2-341c-4f80-a9a2-5633ea08e107" />
+  <Project Path="GoodPup.Repository/GoodPup.Repository.csproj" Id="d8bbb8a4-174f-4198-8715-d1ee682d0905" />
+  <Project Path="GoodPup.Service/GoodPup.Service.csproj" Id="109fb62b-9452-4737-8830-a39da58aed23" />
   <Project Path="GoodPup/GoodPup.csproj" />
 </Solution>
