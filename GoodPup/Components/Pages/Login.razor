@@ -1,0 +1,124 @@
+@page "/login"
+
+<PageTitle>Login</PageTitle>
+
+<style>
+.login-bg {
+    background-color: #f5d09a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-title {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 2.2rem;
+    letter-spacing: 2.5em;
+    color: #222;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5em;
+}
+.login-welcome {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.login-card {
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 2.5rem 2.5rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 350px;
+}
+.login-input {
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #222;
+    border-radius: 0.2rem;
+    font-family: inherit;
+    text-align: center;
+}
+.login-btn {
+    width: 70%;
+    font-size: 1.5rem;
+    background: #1ca0dd;
+    color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 0.5rem 0;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #b2d8ee44;
+    transition: background 0.2s;
+}
+.login-btn:hover {
+    background: #197bbd;
+}
+.signup-btn {
+    width: 100%;
+    font-size: 2rem;
+    background: #1ca0dd;
+    color: #222;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.7rem 0;
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #b2d8ee44;
+    transition: background 0.2s;
+}
+.signup-btn:hover {
+    background: #197bbd;
+    color: #fff;
+}
+.service-number {
+    color: #1ca0dd;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
+}
+</style>
+
+<div class="login-bg">
+    <div>
+        <div class="login-title">G o o d &nbsp; &nbsp; P u p</div>
+        <div class="login-welcome">Welcome!</div>
+        <div class="login-card">
+            <EditForm Model="@loginModel" OnValidSubmit="OnLogin">
+                <InputText class="login-input" @bind-Value="loginModel.Username" placeholder="Username" />
+                <InputText class="login-input" @bind-Value="loginModel.Password" placeholder="Password" type="password" />
+                <button type="submit" class="login-btn">Login</button>
+            </EditForm>
+            <button class="signup-btn" @onclick="OnSignUp">Sign Up</button>
+            <div class="service-number">Service Number 1-800-1234</div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginModel loginModel = new();
+
+    private void OnLogin()
+    {
+        // Placeholder: Add authentication logic here
+    }
+
+    private void OnSignUp()
+    {
+        // Placeholder: Navigate to sign up page (to be implemented)
+    }
+
+    public class LoginModel
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+}
