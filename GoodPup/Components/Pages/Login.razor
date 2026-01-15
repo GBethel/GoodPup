@@ -1,124 +1,109 @@
+
 @page "/login"
 
-<PageTitle>Login</PageTitle>
-
 <style>
-.login-bg {
-    background-color: #f5d09a;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.login-title {
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-    font-size: 2.2rem;
-    letter-spacing: 2.5em;
-    color: #222;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    margin-left: 1.5em;
-}
-.login-welcome {
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-.login-card {
-    background: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    padding: 2.5rem 2.5rem 1.5rem 2.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 350px;
-}
-.login-input {
-    width: 100%;
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-    padding: 0.5rem 0.75rem;
-    border: 2px solid #222;
-    border-radius: 0.2rem;
-    font-family: inherit;
-    text-align: center;
-}
-.login-btn {
-    width: 70%;
-    font-size: 1.5rem;
-    background: #1ca0dd;
-    color: #fff;
-    border: none;
-    border-radius: 1.5rem;
-    padding: 0.5rem 0;
-    margin-bottom: 1.2rem;
-    cursor: pointer;
-    box-shadow: 0 2px 8px #b2d8ee44;
-    transition: background 0.2s;
-}
-.login-btn:hover {
-    background: #197bbd;
-}
-.signup-btn {
-    width: 100%;
-    font-size: 2rem;
-    background: #1ca0dd;
-    color: #222;
-    border: none;
-    border-radius: 2rem;
-    padding: 0.7rem 0;
-    margin-bottom: 0.7rem;
-    cursor: pointer;
-    box-shadow: 0 2px 8px #b2d8ee44;
-    transition: background 0.2s;
-}
-.signup-btn:hover {
-    background: #197bbd;
-    color: #fff;
-}
-.service-number {
-    color: #1ca0dd;
-    font-size: 1.1rem;
-    text-align: center;
-    margin-top: 0.5rem;
-    letter-spacing: 0.05em;
-}
+    .login-bg {
+        background: #f6cd99;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        font-family: 'Architects Daughter', cursive, sans-serif;
+    }
+    .login-title {
+        margin-top: 32px;
+        letter-spacing: 3.5em;
+        font-size: 2.1rem;
+        color: #222;
+        font-family: 'Architects Daughter', cursive, sans-serif;
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 0.5em;
+    }
+    .login-welcome {
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0.7em;
+        color: #222;
+        font-family: inherit;
+    }
+    .login-form-box {
+        background: #fff3e0;
+        margin: 0 auto;
+        padding: 24px 24px 10px 24px;
+        border-radius: 4px;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 260px;
+        max-width: 320px;
+    }
+    .login-input {
+        width: 220px;
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+        padding: 6px 12px;
+        border: 2px solid #888;
+        border-radius: 4px;
+        text-align: center;
+        font-family: inherit;
+        background: #fff;
+    }
+    .login-button {
+        width: 120px;
+        font-size: 1.1rem;
+        background: #1daae2;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 4px 0 4px 0;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-family: inherit;
+        transition: background 0.2s;
+    }
+    .login-button:hover {
+        background: #0d8ecf;
+    }
+    .signup-button {
+        width: 170px;
+        font-size: 1.3rem;
+        background: #1daae2;
+        color: #222;
+        border: none;
+        border-radius: 20px;
+        padding: 6px 0 6px 0;
+        margin-bottom: 8px;
+        cursor: pointer;
+        font-family: inherit;
+        transition: background 0.2s;
+    }
+    .signup-button:hover {
+        background: #0d8ecf;
+        color: #fff;
+    }
+    .service-number {
+        font-size: 1rem;
+        color: #1daae2;
+        margin-top: 6px;
+        margin-bottom: 0;
+        font-family: inherit;
+    }
 </style>
 
 <div class="login-bg">
-    <div>
-        <div class="login-title">G o o d &nbsp; &nbsp; P u p</div>
-        <div class="login-welcome">Welcome!</div>
-        <div class="login-card">
-            <EditForm Model="@loginModel" OnValidSubmit="OnLogin">
-                <InputText class="login-input" @bind-Value="loginModel.Username" placeholder="Username" />
-                <InputText class="login-input" @bind-Value="loginModel.Password" placeholder="Password" type="password" />
-                <button type="submit" class="login-btn">Login</button>
-            </EditForm>
-            <button class="signup-btn" @onclick="OnSignUp">Sign Up</button>
-            <div class="service-number">Service Number 1-800-1234</div>
-        </div>
+    <div class="login-title">G o o d &nbsp;&nbsp;&nbsp; P u p</div>
+    <div class="login-welcome">Welcome!</div>
+    <div class="login-form-box">
+        <input class="login-input" placeholder="Username" />
+        <input class="login-input" placeholder="Password" type="password" />
+        <button class="login-button">Login</button>
+        <button class="signup-button">Sign Up</button>
+        <div class="service-number">Service Number 1-800-1234</div>
     </div>
 </div>
 
-@code {
-    private LoginModel loginModel = new();
 
-    private void OnLogin()
-    {
-        // Placeholder: Add authentication logic here
-    }
-
-    private void OnSignUp()
-    {
-        // Placeholder: Navigate to sign up page (to be implemented)
-    }
-
-    public class LoginModel
-    {
-        public string Username { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-    }
-}
