@@ -1,0 +1,149 @@
+.login-bg {
+    background-color: #f5d09a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.login-outer {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.login-title {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 2.5rem;
+    color: #222;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3em;
+    line-height: 1.1;
+}
+.login-title .brand-row {
+    display: block;
+    letter-spacing: 0.3em;
+}
+.login-welcome {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+.login-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+.login-input {
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    text-align: center;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+.login-input:focus {
+    outline: none;
+    border-color: #1ca0dd;
+}
+.login-btn {
+    width: 100%;
+    font-size: 1.2rem;
+    background: #1ca0dd;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(28, 160, 221, 0.3);
+    transition: background 0.2s, transform 0.1s;
+    min-height: 44px;
+    box-sizing: border-box;
+}
+.login-btn:hover {
+    background: #197bbd;
+}
+.login-btn:active {
+    transform: scale(0.98);
+}
+.signup-btn {
+    width: 100%;
+    font-size: 1.2rem;
+    background: #fff;
+    color: #1ca0dd;
+    border: 2px solid #1ca0dd;
+    border-radius: 2rem;
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(28, 160, 221, 0.1);
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+    min-height: 44px;
+    box-sizing: border-box;
+}
+.signup-btn:hover {
+    background: #1ca0dd;
+    color: #fff;
+}
+.signup-btn:active {
+    transform: scale(0.98);
+}
+.service-number {
+    color: #1ca0dd;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    letter-spacing: 0.05em;
+}
+.service-number a {
+    color: inherit;
+    text-decoration: none;
+}
+.service-number a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .login-bg {
+        padding: 0.5rem;
+    }
+    .login-title {
+        font-size: 2rem;
+        letter-spacing: 0.2em;
+    }
+    .login-title .brand-row {
+        letter-spacing: 0.2em;
+    }
+    .login-welcome {
+        font-size: 1.5rem;
+    }
+    .login-card {
+        padding: 1.5rem 1rem;
+        border-radius: 0.5rem;
+    }
+    .login-input {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+    .login-btn, .signup-btn {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+        min-height: 40px;
+    }
+}
